@@ -14,7 +14,7 @@
 
 #include "../Inc/MCAL/UART/USART_interface.h"
 #include "../Inc/MCAL/FPEC/FPEC_interface.h"
-void Parser_voidParseRecord(u8* Copy_u8BufData);
+
 //=====================================================================
 //Global variables
 //======================================================================
@@ -64,10 +64,10 @@ void main(void)
 	MGPIO_voidSetPinDirection(GPIOA,9,0b1010);   /* TX AFPP */
 	MGPIO_voidSetPinDirection(GPIOA,10,INPUT_FLOAT);  /* Rx Input Floating */
 
-	/*Cnfiguar uart tx and rx pins */
-	MGPIO_voidSetPinDirection(GPIOB,4,INPUT_PULL_UP_DOWEN);  /* Rx Input pullup */
+	/*Configuar  witches pins as pullup  */
+	MGPIO_voidSetPinDirection(GPIOB,4,INPUT_PULL_UP_DOWEN);  /* B4 Input pullup */
 	MGPIO_voidSetPinValue(GPIOB,4,PULLUP_SELECT);
-	MGPIO_voidSetPinDirection(GPIOB,5,INPUT_PULL_UP_DOWEN);  /* Rx Input pullup */
+	MGPIO_voidSetPinDirection(GPIOB,5,INPUT_PULL_UP_DOWEN);  /* B5 Input pullup */
 	MGPIO_voidSetPinValue(GPIOB,5,PULLUP_SELECT);
 	MUSART1_voidInit();/*baud rate 9600 -enable RX,TX*/
 

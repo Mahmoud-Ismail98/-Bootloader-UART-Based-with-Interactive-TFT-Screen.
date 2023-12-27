@@ -1,0 +1,17 @@
+../Src/HAL/TFT/TFT_program.c:28:6:HTFT_voidInitialize	1
+../Src/HAL/TFT/TFT_program.c:57:6:HTFT_voidDisplayImage	2
+../Src/HAL/TFT/TFT_program.c:93:6:HTFT_voidFillColor	2
+../Src/HAL/TFT/TFT_program.c:127:6:HTFT_voidDrawRect	2
+../Src/HAL/TFT/TFT_program.c:162:6:voidWriteCommand	1
+../Src/HAL/TFT/TFT_program.c:174:6:voidWriteData	1
+../Src/HAL/TFT/TFT_program.c:184:6:ST7735_Reset	1
+../Src/HAL/TFT/TFT_program.c:192:6:ST7735_SetAddressWindow	1
+../Src/HAL/TFT/TFT_program.c:211:6:ST7735_WriteChar	6
+../Src/HAL/TFT/TFT_program.c:238:6:ST7735_WriteString	5
+../Src/HAL/TFT/TFT_program.c:261:6:drawPixel	4
+../Src/HAL/TFT/TFT_program.c:272:6:writePixel	1
+../Src/HAL/TFT/TFT_program.c:277:6:writeLine	6
+../Src/HAL/TFT/TFT_program.c:317:7:drawFastVLine	1
+../Src/HAL/TFT/TFT_program.c:321:7:drawFastHLine	1
+../Src/HAL/TFT/TFT_program.c:325:6:drawRect	1
+../Src/HAL/TFT/TFT_program.c:333:6:ST7735_SetRotation	5

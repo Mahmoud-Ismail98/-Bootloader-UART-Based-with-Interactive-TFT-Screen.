@@ -69,8 +69,8 @@ all: main-build
 main-build: Bootloader_apdater.elf secondary-outputs
 
 # Tool invocations
-Bootloader_apdater.elf Bootloader_apdater.map: $(OBJS) $(USER_OBJS) H:\test\ARM_prgect\Bootloader-UART-Based-with-Interactive-TFT-Screen\Bootloader_Updater_APP\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Bootloader_apdater.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"H:\test\ARM_prgect\Bootloader-UART-Based-with-Interactive-TFT-Screen\Bootloader_Updater_APP\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bootloader_apdater.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Bootloader_apdater.elf Bootloader_apdater.map: $(OBJS) $(USER_OBJS) H:\test\ARM_prgect\Bootloader-UART-Based-with-Interactive-TFT-Screen\Bootloader_APP_updater\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Bootloader_apdater.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"H:\test\ARM_prgect\Bootloader-UART-Based-with-Interactive-TFT-Screen\Bootloader_APP_updater\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bootloader_apdater.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
