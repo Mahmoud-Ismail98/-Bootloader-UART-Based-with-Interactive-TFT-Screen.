@@ -2794,8 +2794,8 @@ void main(void)
  80011e4:	2000      	movs	r0, #0
  80011e6:	f7ff fc1f 	bl	8000a28 <MGPIO_voidSetPinDirection>
 
-	/*Cnfiguar uart tx and rx pins */
-	MGPIO_voidSetPinDirection(GPIOB,4,INPUT_PULL_UP_DOWEN);  /* Rx Input pullup */
+	/*Configuar  witches pins as pullup  */
+	MGPIO_voidSetPinDirection(GPIOB,4,INPUT_PULL_UP_DOWEN);  /* B4 Input pullup */
  80011ea:	2208      	movs	r2, #8
  80011ec:	2104      	movs	r1, #4
  80011ee:	2001      	movs	r0, #1
@@ -2805,7 +2805,7 @@ void main(void)
  80011f6:	2104      	movs	r1, #4
  80011f8:	2001      	movs	r0, #1
  80011fa:	f7ff fceb 	bl	8000bd4 <MGPIO_voidSetPinValue>
-	MGPIO_voidSetPinDirection(GPIOB,5,INPUT_PULL_UP_DOWEN);  /* Rx Input pullup */
+	MGPIO_voidSetPinDirection(GPIOB,5,INPUT_PULL_UP_DOWEN);  /* B5 Input pullup */
  80011fe:	2208      	movs	r2, #8
  8001200:	2105      	movs	r1, #5
  8001202:	2001      	movs	r0, #1
@@ -3080,11 +3080,11 @@ void func_select_app(void)
  80013c2:	e02c      	b.n	800141e <func_select_app+0x86>
 	{
 	case 0:
-		ST7735_WriteString(0,40, "NO APP UPDATED ", Font_11x18, MAGENTA, BLACK);
+		ST7735_WriteString(0,40, "NO APP UPDATED ", Font_11x18, CYAN, BLACK);
  80013c4:	4b5c      	ldr	r3, [pc, #368]	; (8001538 <func_select_app+0x1a0>)
  80013c6:	2200      	movs	r2, #0
  80013c8:	9202      	str	r2, [sp, #8]
- 80013ca:	f64f 021f 	movw	r2, #63519	; 0xf81f
+ 80013ca:	f240 72ff 	movw	r2, #2047	; 0x7ff
  80013ce:	9201      	str	r2, [sp, #4]
  80013d0:	685a      	ldr	r2, [r3, #4]
  80013d2:	9200      	str	r2, [sp, #0]
@@ -3096,11 +3096,11 @@ void func_select_app(void)
 		break;
  80013e0:	e01d      	b.n	800141e <func_select_app+0x86>
 	case 1:
-		ST7735_WriteString(0,40, "APP 1 UPDATED ", Font_11x18, MAGENTA , BLACK);
+		ST7735_WriteString(0,40, "APP 1 UPDATED ", Font_11x18, CYAN , BLACK);
  80013e2:	4b55      	ldr	r3, [pc, #340]	; (8001538 <func_select_app+0x1a0>)
  80013e4:	2200      	movs	r2, #0
  80013e6:	9202      	str	r2, [sp, #8]
- 80013e8:	f64f 021f 	movw	r2, #63519	; 0xf81f
+ 80013e8:	f240 72ff 	movw	r2, #2047	; 0x7ff
  80013ec:	9201      	str	r2, [sp, #4]
  80013ee:	685a      	ldr	r2, [r3, #4]
  80013f0:	9200      	str	r2, [sp, #0]
@@ -3112,11 +3112,11 @@ void func_select_app(void)
 		break;
  80013fe:	e00e      	b.n	800141e <func_select_app+0x86>
 	case 2:
-		ST7735_WriteString(0,40, "APP 2 UPDATED ", Font_11x18, MAGENTA , BLACK);
+		ST7735_WriteString(0,40, "APP 2 UPDATED ", Font_11x18, CYAN , BLACK);
  8001400:	4b4d      	ldr	r3, [pc, #308]	; (8001538 <func_select_app+0x1a0>)
  8001402:	2200      	movs	r2, #0
  8001404:	9202      	str	r2, [sp, #8]
- 8001406:	f64f 021f 	movw	r2, #63519	; 0xf81f
+ 8001406:	f240 72ff 	movw	r2, #2047	; 0x7ff
  800140a:	9201      	str	r2, [sp, #4]
  800140c:	685a      	ldr	r2, [r3, #4]
  800140e:	9200      	str	r2, [sp, #0]
@@ -3204,11 +3204,11 @@ void func_select_app(void)
  80014b2:	2b01      	cmp	r3, #1
  80014b4:	d11b      	bne.n	80014ee <func_select_app+0x156>
 	{
-		ST7735_WriteString(0,30, "APP1 will run", Font_11x18,GREEN , BLACK);
+		ST7735_WriteString(0,30, "APP1 will run", Font_11x18,CYAN , BLACK);
  80014b6:	4b20      	ldr	r3, [pc, #128]	; (8001538 <func_select_app+0x1a0>)
  80014b8:	2200      	movs	r2, #0
  80014ba:	9202      	str	r2, [sp, #8]
- 80014bc:	f44f 62fc 	mov.w	r2, #2016	; 0x7e0
+ 80014bc:	f240 72ff 	movw	r2, #2047	; 0x7ff
  80014c0:	9201      	str	r2, [sp, #4]
  80014c2:	685a      	ldr	r2, [r3, #4]
  80014c4:	9200      	str	r2, [sp, #0]
@@ -3217,24 +3217,24 @@ void func_select_app(void)
  80014ca:	211e      	movs	r1, #30
  80014cc:	2000      	movs	r0, #0
  80014ce:	f7ff f81d 	bl	800050c <ST7735_WriteString>
-		MSTK_voidSetBusyWait(4000000);
- 80014d2:	481d      	ldr	r0, [pc, #116]	; (8001548 <func_select_app+0x1b0>)
+		MSTK_voidSetBusyWait(5000000);
+ 80014d2:	4822      	ldr	r0, [pc, #136]	; (800155c <func_select_app+0x1c4>)
  80014d4:	f7ff fcc6 	bl	8000e64 <MSTK_voidSetBusyWait>
 		SCB_VTOR = 0x08003C00;
- 80014d8:	4b20      	ldr	r3, [pc, #128]	; (800155c <func_select_app+0x1c4>)
- 80014da:	4a21      	ldr	r2, [pc, #132]	; (8001560 <func_select_app+0x1c8>)
+ 80014d8:	4b21      	ldr	r3, [pc, #132]	; (8001560 <func_select_app+0x1c8>)
+ 80014da:	4a22      	ldr	r2, [pc, #136]	; (8001564 <func_select_app+0x1cc>)
  80014dc:	601a      	str	r2, [r3, #0]
 		address_of_selective_app = *((adress_to_loc_t *)0x08003C04);
- 80014de:	4b21      	ldr	r3, [pc, #132]	; (8001564 <func_select_app+0x1cc>)
+ 80014de:	4b22      	ldr	r3, [pc, #136]	; (8001568 <func_select_app+0x1d0>)
  80014e0:	681b      	ldr	r3, [r3, #0]
- 80014e2:	4a21      	ldr	r2, [pc, #132]	; (8001568 <func_select_app+0x1d0>)
+ 80014e2:	4a22      	ldr	r2, [pc, #136]	; (800156c <func_select_app+0x1d4>)
  80014e4:	6013      	str	r3, [r2, #0]
 		address_of_selective_app();
- 80014e6:	4b20      	ldr	r3, [pc, #128]	; (8001568 <func_select_app+0x1d0>)
+ 80014e6:	4b21      	ldr	r3, [pc, #132]	; (800156c <func_select_app+0x1d4>)
  80014e8:	681b      	ldr	r3, [r3, #0]
  80014ea:	4798      	blx	r3
 		SCB_VTOR = 0x08008C00;
-		address_of_selective_app = *((adress_to_loc_t *)0x08008C04);
+		address_of_selective_app = *((adress_to_loc_t *)0x08008C00);
 		address_of_selective_app();
 	}
 
@@ -3244,33 +3244,33 @@ void func_select_app(void)
  80014ee:	687b      	ldr	r3, [r7, #4]
  80014f0:	2b02      	cmp	r3, #2
  80014f2:	d11a      	bne.n	800152a <func_select_app+0x192>
-		ST7735_WriteString(0,30, "APP2 will run", Font_11x18,GREEN , BLACK);
+		ST7735_WriteString(0,30, "APP2 will run", Font_11x18,CYAN , BLACK);
  80014f4:	4b10      	ldr	r3, [pc, #64]	; (8001538 <func_select_app+0x1a0>)
  80014f6:	2200      	movs	r2, #0
  80014f8:	9202      	str	r2, [sp, #8]
- 80014fa:	f44f 62fc 	mov.w	r2, #2016	; 0x7e0
+ 80014fa:	f240 72ff 	movw	r2, #2047	; 0x7ff
  80014fe:	9201      	str	r2, [sp, #4]
  8001500:	685a      	ldr	r2, [r3, #4]
  8001502:	9200      	str	r2, [sp, #0]
  8001504:	681b      	ldr	r3, [r3, #0]
- 8001506:	4a19      	ldr	r2, [pc, #100]	; (800156c <func_select_app+0x1d4>)
+ 8001506:	4a1a      	ldr	r2, [pc, #104]	; (8001570 <func_select_app+0x1d8>)
  8001508:	211e      	movs	r1, #30
  800150a:	2000      	movs	r0, #0
  800150c:	f7fe fffe 	bl	800050c <ST7735_WriteString>
-		MSTK_voidSetBusyWait(4000000);
- 8001510:	480d      	ldr	r0, [pc, #52]	; (8001548 <func_select_app+0x1b0>)
+		MSTK_voidSetBusyWait(5000000);
+ 8001510:	4812      	ldr	r0, [pc, #72]	; (800155c <func_select_app+0x1c4>)
  8001512:	f7ff fca7 	bl	8000e64 <MSTK_voidSetBusyWait>
 		SCB_VTOR = 0x08008C00;
- 8001516:	4b11      	ldr	r3, [pc, #68]	; (800155c <func_select_app+0x1c4>)
- 8001518:	4a15      	ldr	r2, [pc, #84]	; (8001570 <func_select_app+0x1d8>)
+ 8001516:	4b12      	ldr	r3, [pc, #72]	; (8001560 <func_select_app+0x1c8>)
+ 8001518:	4a16      	ldr	r2, [pc, #88]	; (8001574 <func_select_app+0x1dc>)
  800151a:	601a      	str	r2, [r3, #0]
-		address_of_selective_app = *((adress_to_loc_t *)0x08008C04);
+		address_of_selective_app = *((adress_to_loc_t *)0x08008C00);
  800151c:	4b15      	ldr	r3, [pc, #84]	; (8001574 <func_select_app+0x1dc>)
  800151e:	681b      	ldr	r3, [r3, #0]
- 8001520:	4a11      	ldr	r2, [pc, #68]	; (8001568 <func_select_app+0x1d0>)
+ 8001520:	4a12      	ldr	r2, [pc, #72]	; (800156c <func_select_app+0x1d4>)
  8001522:	6013      	str	r3, [r2, #0]
 		address_of_selective_app();
- 8001524:	4b10      	ldr	r3, [pc, #64]	; (8001568 <func_select_app+0x1d0>)
+ 8001524:	4b11      	ldr	r3, [pc, #68]	; (800156c <func_select_app+0x1d4>)
  8001526:	681b      	ldr	r3, [r3, #0]
  8001528:	4798      	blx	r3
 }
@@ -3289,13 +3289,13 @@ void func_select_app(void)
  8001550:	0800168c 	.word	0x0800168c
  8001554:	0800169c 	.word	0x0800169c
  8001558:	080016ac 	.word	0x080016ac
- 800155c:	e000ed08 	.word	0xe000ed08
- 8001560:	08003c00 	.word	0x08003c00
- 8001564:	08003c04 	.word	0x08003c04
- 8001568:	20000174 	.word	0x20000174
- 800156c:	080016bc 	.word	0x080016bc
- 8001570:	08008c00 	.word	0x08008c00
- 8001574:	08008c04 	.word	0x08008c04
+ 800155c:	004c4b40 	.word	0x004c4b40
+ 8001560:	e000ed08 	.word	0xe000ed08
+ 8001564:	08003c00 	.word	0x08003c00
+ 8001568:	08003c04 	.word	0x08003c04
+ 800156c:	20000174 	.word	0x20000174
+ 8001570:	080016bc 	.word	0x080016bc
+ 8001574:	08008c00 	.word	0x08008c00
 
 08001578 <Reset_Handler>:
  8001578:	480d      	ldr	r0, [pc, #52]	; (80015b0 <LoopForever+0x2>)

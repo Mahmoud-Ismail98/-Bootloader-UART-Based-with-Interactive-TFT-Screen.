@@ -1,0 +1,2 @@
+../Src/MCAL/SPI/SPI_program.c:15:6:MSPI1_voidInit	1
+../Src/MCAL/SPI/SPI_program.c:20:6:MSPI1_voidSendReceiveSynch	2

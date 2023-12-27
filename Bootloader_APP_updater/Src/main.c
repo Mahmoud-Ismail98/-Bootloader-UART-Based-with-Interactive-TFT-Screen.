@@ -145,13 +145,13 @@ void func_select_app(void)
 	switch(app_apdated)
 	{
 	case 0:
-		ST7735_WriteString(0,40, "NO APP UPDATED ", Font_11x18, MAGENTA, BLACK);
+		ST7735_WriteString(0,40, "NO APP UPDATED ", Font_11x18, CYAN, BLACK);
 		break;
 	case 1:
-		ST7735_WriteString(0,40, "APP 1 UPDATED ", Font_11x18, MAGENTA , BLACK);
+		ST7735_WriteString(0,40, "APP 1 UPDATED ", Font_11x18, CYAN , BLACK);
 		break;
 	case 2:
-		ST7735_WriteString(0,40, "APP 2 UPDATED ", Font_11x18, MAGENTA , BLACK);
+		ST7735_WriteString(0,40, "APP 2 UPDATED ", Font_11x18, CYAN , BLACK);
 		break;
 
 	}
@@ -169,18 +169,18 @@ void func_select_app(void)
 	ST7735_SetRotation(1);
 	if(app_number==1)
 	{
-		ST7735_WriteString(0,30, "APP1 will run", Font_11x18,GREEN , BLACK);
-		MSTK_voidSetBusyWait(4000000);
+		ST7735_WriteString(0,30, "APP1 will run", Font_11x18,CYAN , BLACK);
+		MSTK_voidSetBusyWait(5000000);
 		SCB_VTOR = 0x08003C00;
 		address_of_selective_app = *((adress_to_loc_t *)0x08003C04);
 		address_of_selective_app();
 	}
 	else if(app_number==2)
 	{
-		ST7735_WriteString(0,30, "APP2 will run", Font_11x18,GREEN , BLACK);
-		MSTK_voidSetBusyWait(4000000);
+		ST7735_WriteString(0,30, "APP2 will run", Font_11x18,CYAN , BLACK);
+		MSTK_voidSetBusyWait(5000000);
 		SCB_VTOR = 0x08008C00;
-		address_of_selective_app = *((adress_to_loc_t *)0x08008C04);
+		address_of_selective_app = *((adress_to_loc_t *)0x08008C00);
 		address_of_selective_app();
 	}
 
