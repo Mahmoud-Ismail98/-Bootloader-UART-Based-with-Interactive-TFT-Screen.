@@ -1,0 +1,3 @@
+../Src/main.c:45:6:main	24	static
+../Src/main.c:122:5:get_pressed_button	16	static
+../Src/main.c:142:6:func_select_app	32	static
