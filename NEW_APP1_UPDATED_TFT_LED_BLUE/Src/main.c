@@ -54,20 +54,21 @@ void main(void)
 	ST7735_SetRotation(0);
 	HTFT_voidFillColor(BLACK);
 	ST7735_SetRotation(1);
-	ST7735_WriteString(0,10, "APPLLICATION 2", Font_11x18, GREEN , BLACK);
-	ST7735_WriteString(0,50, "   GREEN LED  ", Font_11x18, GREEN , BLACK);
+	ST7735_WriteString(0,0, "  NEW UPDATES", Font_11x18, BLUE , BLACK);
+	ST7735_WriteString(0,30, "APPLLICATION 1", Font_11x18, BLUE , BLACK);
+	ST7735_WriteString(0,70, "   BLUE LED  ", Font_11x18, BLUE , BLACK);
 
 	MGPIO_voidSetPinValue(GPIOB,RED_LED,GPIO_LOW);
-	MGPIO_voidSetPinValue(GPIOB,BLUE_LED,GPIO_LOW);
-	MGPIO_voidSetPinValue(GPIOB,GREEN_LED,GPIO_HIGH);
+	MGPIO_voidSetPinValue(GPIOB,BLUE_LED,GPIO_HIGH);
+	MGPIO_voidSetPinValue(GPIOB,GREEN_LED,GPIO_LOW);
 
 	while(RESET_switch_READ==1)
 	{
 			RESET_switch_READ=MGPIO_u8GetPinValue(GPIOB,RESET_switch);
-			MGPIO_voidSetPinValue(GPIOB,GREEN_LED,GPIO_HIGH);
+			MGPIO_voidSetPinValue(GPIOB,BLUE_LED,GPIO_HIGH);
 			MSTK_voidSetBusyWait(5000000);
 			RESET_switch_READ=MGPIO_u8GetPinValue(GPIOB,RESET_switch);
-			MGPIO_voidSetPinValue(GPIOB,GREEN_LED,GPIO_LOW);
+			MGPIO_voidSetPinValue(GPIOB,BLUE_LED,GPIO_LOW);
 			MSTK_voidSetBusyWait(5000000);
 	}
 	if (RESET_switch_READ==0)

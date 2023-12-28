@@ -1,0 +1,8 @@
+"./Src/HAL/TFT/TFT_program.o"
+"./Src/HAL/TFT/fonts.o"
+"./Src/MCAL/GPIO/GPIO_program.o"
+"./Src/MCAL/RCC/RCC_program.o"
+"./Src/MCAL/SPI/SPI_program.o"
+"./Src/MCAL/SYSTICK/STK_program.o"
+"./Src/main.o"
+"./Startup/startup_stm32f103c8tx.o"

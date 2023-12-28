@@ -54,8 +54,8 @@ void main(void)
 	ST7735_SetRotation(0);
 	HTFT_voidFillColor(BLACK);
 	ST7735_SetRotation(1);
-	ST7735_WriteString(0,5, "     APP1  ", Font_11x18, RED , BLACK);
-	ST7735_WriteString(0,40, "    RED LED  ", Font_11x18, RED , BLACK);
+	ST7735_WriteString(0,10, "APPLLICATION 1", Font_11x18, RED , BLACK);
+	ST7735_WriteString(0,50, "    RED LED  ", Font_11x18, RED , BLACK);
 
 	MGPIO_voidSetPinValue(GPIOB,RED_LED,GPIO_HIGH);
 	MGPIO_voidSetPinValue(GPIOB,BLUE_LED,GPIO_LOW);
@@ -65,15 +65,15 @@ void main(void)
 	{
 			RESET_switch_READ=MGPIO_u8GetPinValue(GPIOB,RESET_switch);
 			MGPIO_voidSetPinValue(GPIOB,RED_LED,GPIO_HIGH);
-			MSTK_voidSetBusyWait(8000000);
+			MSTK_voidSetBusyWait(5000000);
 			RESET_switch_READ=MGPIO_u8GetPinValue(GPIOB,RESET_switch);
 			MGPIO_voidSetPinValue(GPIOB,RED_LED,GPIO_LOW);
-			MSTK_voidSetBusyWait(0x08000000);
+			MSTK_voidSetBusyWait(5000000);
 	}
 	if (RESET_switch_READ==0)
 	{
 		SCB_VTOR = 0x08000000;
-		address_of_selective_app = *((adress_to_loc_t *)0x08000000);
+		address_of_selective_app = *((adress_to_loc_t *)0x08000004);
 		address_of_selective_app();
 	}
 	
