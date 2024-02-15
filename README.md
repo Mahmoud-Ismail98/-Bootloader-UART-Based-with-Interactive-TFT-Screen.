@@ -13,7 +13,7 @@ At the outset of the bootloader application's launch, it takes a brief pause to 
 7)  #### This return is facilitated through a configured push button.
 8)  #### It allows for the reception of new updates or the transition to another application.
 
-## [Project Video on Linkedin ](https://www.linkedin.com/posts/mahmoud-korayem-8b1947162_bootloader-applicationupdates-userexperience-activity-7146266739603828736-8NNp?utm_source=share&utm_medium=member_desktop/)
+## [Project Video on Linkedin ](https://www.linkedin.com/posts/mahmoud-korayem-8b1947162_bootloader-applicationupdates-userexperience-activity-7146479831998791680-Kipx?utm_source=share&utm_medium=member_desktop)
 ## This is the MEMORY MAP :
 1)  #### Bootloader APPlication:
      ADDRESS RANGE :0x0800 0000 - 0x0800 3C00 
